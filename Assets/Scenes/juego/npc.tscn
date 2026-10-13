@@ -21,3 +21,4 @@ texture = ExtResource("1_haue1")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1305577928]
 radius = 50.0
+debug_path_custom_color = Color(1, 0.21176471, 1, 1)

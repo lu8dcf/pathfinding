@@ -15,6 +15,8 @@ func iniciar_npc():
 	var tipo = boton_npc
 	if boton_npc == 0: #random
 		tipo = randi_range(1,5)
+		if tipo==2:
+			tipo=1
 	var npc = npc_scene.instantiate()
 	npc.tipo=tipo
 	npc.global_position = Vector2(75,570)

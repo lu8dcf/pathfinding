@@ -8,30 +8,31 @@ var sprite ="res://Models/6.png"
 
 var objetivo: Node2D
 
-const LAYER_GROUND = 1
-const LAYER_FIRE = 2
-const LAYER_COLD = 3
-const LAYER_POISON = 5
-const LAYER_LIGHT = 4
+const LAYER_GROUND = 1 << 0
+const LAYER_FIRE = 1 << 1
+const LAYER_COLD = 1 << 2
+const LAYER_POISON = 1 << 4
+const LAYER_LIGHT = 1 << 3
 
 func _ready() -> void:
 	cargar_sprite()
 	cargar_layer()
 	objetivo = get_tree().get_first_node_in_group("llegada")
 	
+	# Esperar un frame de física para que la navegación esté lista
+	await get_tree().physics_frame
+	await get_tree().create_timer(3.0).timeout
 	if objetivo:
 		agent.target_position = objetivo.global_position
 
 	add_to_group("npc") # grupo npc
 	
-
+	# movimiento suave en las esquinas
 	agent.avoidance_enabled = true
 	agent.radius = 30
-	print(
-		NavigationServer2D.map_get_regions(
-			agent.get_navigation_map()
-		)
-	)
+	agent.debug_enabled = true
+	print(agent.get_current_navigation_path())
+	
 
 func _physics_process(_delta: float) -> void:
 
@@ -39,7 +40,7 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-
+	
 	var siguiente_punto = agent.get_next_path_position()
 
 	var direccion = global_position.direction_to(siguiente_punto)
@@ -60,12 +61,12 @@ func cargar_layer():
 			agent.navigation_layers = LAYER_GROUND 
 			
 		1:
-			agent.navigation_layers = LAYER_FIRE | LAYER_GROUND 
+			agent.navigation_layers = LAYER_GROUND | LAYER_FIRE 
 	
-		2: # Cold
+		3: # Cold
 			agent.navigation_layers = LAYER_GROUND | LAYER_COLD
 
-		3: # Lightning
+		5: # Lightning
 			agent.navigation_layers = LAYER_GROUND | LAYER_LIGHT
 
 		4: # Poison
