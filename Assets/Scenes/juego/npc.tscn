@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://di0qkobvc4k4k"]
+
+[ext_resource type="Texture2D" uid="uid://bqhln82rq6i53" path="res://Models/6.png" id="1_haue1"]
+[ext_resource type="Script" uid="uid://xst6og211lku" path="res://Assets/Scripts/juego/npc.gd" id="1_wpycl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sugfe"]
+radius = 4.0
+
+[node name="Npc" type="CharacterBody2D" unique_id=230588526]
+collision_layer = 2
+collision_mask = 191
+script = ExtResource("1_wpycl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2008583862]
+shape = SubResource("CircleShape2D_sugfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1108293392]
+position = Vector2(-4.172325e-07, -1.1920929e-07)
+scale = Vector2(0.08, 0.06666666)
+texture = ExtResource("1_haue1")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1305577928]
+radius = 50.0

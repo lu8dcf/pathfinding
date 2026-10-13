@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://hc6rpq5wqnnj"]
+
+[ext_resource type="Script" uid="uid://cj6p0uoxupuf7" path="res://Assets/Scripts/menu/juego.gd" id="1_clgxj"]
+[ext_resource type="PackedScene" uid="uid://crsjumhou2i8t" path="res://Assets/Scenes/menu/menu.tscn" id="2_37pdc"]
+[ext_resource type="PackedScene" uid="uid://dfadd01jfq8ki" path="res://Assets/Scenes/juego/mapa.tscn" id="2_qoyqk"]
+[ext_resource type="PackedScene" uid="uid://pfgrnc3yhlr8" path="res://Assets/Scenes/juego/fabrica_npc.tscn" id="3_37pdc"]
+
+[node name="Juego" type="Node2D" unique_id=127621805]
+script = ExtResource("1_clgxj")
+
+[node name="Menu" parent="." unique_id=1154234872 instance=ExtResource("2_37pdc")]
+
+[node name="mapa" parent="." unique_id=2124173842 instance=ExtResource("2_qoyqk")]
+
+[node name="fabrica_npc" parent="." unique_id=1786914242 instance=ExtResource("3_37pdc")]

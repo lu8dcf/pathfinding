@@ -1,0 +1,46 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="MMI proy2 Pathfinding"
+run/main_scene="uid://hc6rpq5wqnnj"
+config/features=PackedStringArray("4.7", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalSignal="*uid://bed8qpaigio6p"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[layer_names]
+
+2d_physics/layer_1="pared"
+2d_navigation/layer_1="Ground"
+2d_physics/layer_2="npc"
+2d_navigation/layer_2="fire"
+2d_physics/layer_3="1-naranja"
+2d_physics/layer_4="2 azul"
+2d_physics/layer_5="3 amarillo"
+2d_physics/layer_6="4 verde"
+2d_physics/layer_7="salida"
+2d_physics/layer_8="llegada"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"

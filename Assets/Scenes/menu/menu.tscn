@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://crsjumhou2i8t"]
+
+[ext_resource type="Script" uid="uid://bgr0aus2r3iaa" path="res://Assets/Scripts/menu/menu.gd" id="1_7wo7m"]
+[ext_resource type="Texture2D" uid="uid://b7yxirr21xjxr" path="res://Models/caja_5.png" id="1_11chp"]
+[ext_resource type="Texture2D" uid="uid://bmitrtuigef5m" path="res://Models/caja_3.png" id="1_p3l0g"]
+[ext_resource type="Texture2D" uid="uid://do6yxcatuyt8g" path="res://Models/caja_4.png" id="2_p3l0g"]
+[ext_resource type="Texture2D" uid="uid://by83kaupt3js5" path="res://Models/caja_6.png" id="2_vhjer"]
+[ext_resource type="Texture2D" uid="uid://doecjncigfrbg" path="res://Models/caja_1.png" id="3_t12pu"]
+
+[node name="Menu" type="CanvasLayer" unique_id=610068618]
+script = ExtResource("1_7wo7m")
+metadata/_edit_horizontal_guides_ = [4.0]
+
+[node name="Control" type="Control" parent="." unique_id=1356312248]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="common" type="Button" parent="Control" unique_id=880286879]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 594.00006
+offset_right = 635.0
+offset_bottom = 752.00006
+scale = Vector2(0.2728517, 0.24523197)
+icon = ExtResource("2_vhjer")
+text_overrun_behavior = 2
+
+[node name="fire" type="Button" parent="Control" unique_id=2126395576]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45600003
+anchor_top = 0.91700006
+anchor_right = 0.49100003
+anchor_bottom = 0.97900003
+offset_left = 1.6879883
+offset_top = -0.21606445
+offset_right = 119.36798
+offset_bottom = 117.60797
+scale = Vector2(0.24621922, 0.24621922)
+icon = ExtResource("3_t12pu")
+
+[node name="cold" type="Button" parent="Control" unique_id=2026729129]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.91700006
+anchor_right = 0.531
+anchor_bottom = 0.97700006
+offset_left = -3.0
+offset_top = -0.21606445
+offset_right = 119.287964
+offset_bottom = 118.90399
+scale = Vector2(0.24864383, 0.24864383)
+icon = ExtResource("1_p3l0g")
+
+[node name="lightning" type="Button" parent="Control" unique_id=469710490]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.53800005
+anchor_top = 0.91700006
+anchor_right = 0.57100004
+anchor_bottom = 0.9760001
+offset_left = 0.22393799
+offset_top = -0.21606445
+offset_right = 120.20795
+offset_bottom = 119.55194
+scale = Vector2(0.24269, 0.24269)
+icon = ExtResource("1_11chp")
+icon_alignment = 1
+
+[node name="poison" type="Button" parent="Control" unique_id=308976313]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.57900006
+anchor_top = 0.91800004
+anchor_right = 0.614
+anchor_bottom = 0.97700006
+offset_left = -2.0080566
+offset_top = -0.8640137
+offset_right = 127.672
+offset_bottom = 119.90399
+scale = Vector2(0.24000001, 0.24000001)
+icon = ExtResource("2_p3l0g")
+icon_alignment = 1
+
+[node name="random" type="Button" parent="Control" unique_id=1314046838]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.62200004
+anchor_top = 0.92600006
+anchor_right = 0.707
+anchor_bottom = 0.975
+offset_left = 1.4559326
+offset_top = -1.0480347
+offset_right = 0.53601074
+offset_bottom = -1.7999878
+text = "Random
+"
+
+[node name="create_obs" type="Button" parent="Control" unique_id=762808710]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.73
+anchor_top = 0.92600006
+anchor_right = 0.845
+anchor_bottom = 0.97400004
+offset_left = -0.960022
+offset_top = -1.0480347
+offset_right = -0.44006348
+offset_bottom = -1.1520386
+text = "Crear Obstaculo"
+
+[node name="delete_obs" type="Button" parent="Control" unique_id=247103032]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.84800005
+anchor_top = 0.924
+anchor_right = 0.96700007
+anchor_bottom = 0.966
+offset_left = 0.10394287
+offset_top = 0.24798584
+offset_right = 0.01586914
+offset_bottom = -0.9680176
+text = "Borrar Obstaculo"
+
+[connection signal="pressed" from="Control/common" to="." method="_on_common_pressed"]
+[connection signal="pressed" from="Control/fire" to="." method="_on_fire_pressed"]
+[connection signal="pressed" from="Control/cold" to="." method="_on_cold_pressed"]
+[connection signal="pressed" from="Control/lightning" to="." method="_on_lightning_pressed"]
+[connection signal="pressed" from="Control/poison" to="." method="_on_poison_pressed"]
+[connection signal="pressed" from="Control/random" to="." method="_on_random_pressed"]
+[connection signal="pressed" from="Control/create_obs" to="." method="_on_create_obs_pressed"]
+[connection signal="pressed" from="Control/delete_obs" to="." method="_on_delete_obs_pressed"]
