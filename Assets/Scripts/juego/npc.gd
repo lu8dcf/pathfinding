@@ -21,7 +21,7 @@ func _ready() -> void:
 	
 	# Esperar un frame de física para que la navegación esté lista
 	await get_tree().physics_frame
-	await get_tree().create_timer(3.0).timeout
+	
 	if objetivo:
 		agent.target_position = objetivo.global_position
 
