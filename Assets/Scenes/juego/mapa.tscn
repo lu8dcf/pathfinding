@@ -661,4 +661,12 @@ navigation_layers = 8
 start_position = Vector2(922, 314)
 end_position = Vector2(919, 442)
 
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1789815019]
+position = Vector2(398, 476)
+radius = 57.01
+vertices = PackedVector2Array(-8, -7, 31, -6, 36, 64, -15, 63)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_layers = 31
+
 [connection signal="body_entered" from="llegada" to="." method="_on_llegada_body_entered"]

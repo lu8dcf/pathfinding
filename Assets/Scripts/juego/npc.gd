@@ -31,7 +31,7 @@ func _ready() -> void:
 	agent.avoidance_enabled = true
 	agent.radius = 30
 	agent.debug_enabled = true
-	print(agent.get_current_navigation_path())
+	
 	
 
 func _physics_process(_delta: float) -> void:
