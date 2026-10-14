@@ -16,11 +16,11 @@ func iniciar_npc():
 	GlobalSignal.boton.emit(boton_npc)
 	var tipo = boton_npc
 	if boton_npc == 0: #random
-		tipo = randi_range(1,5)
-		if tipo==2:
-			tipo=1
+		tipo = randi_range(0,5)
+		if tipo==2 or tipo==0:
+			tipo=6
 	var npc = npc_scene.instantiate()
-	
+	print (tipo)
 	npc.tipo=tipo
 	npc.global_position = Vector2(75,570)
 	get_tree().current_scene.add_child(npc)
