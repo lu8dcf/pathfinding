@@ -788,6 +788,7 @@ start_position = Vector2(917, 272)
 end_position = Vector2(918, 158)
 
 [node name="Poison2" type="NavigationLink2D" parent="." unique_id=279316441]
+position = Vector2(-6, 1)
 navigation_layers = 16
 start_position = Vector2(443, 120)
 end_position = Vector2(376, 117)
@@ -809,8 +810,8 @@ end_position = Vector2(240, 451)
 
 [node name="Light2" type="NavigationLink2D" parent="." unique_id=1119832503]
 navigation_layers = 8
-start_position = Vector2(617, 307)
-end_position = Vector2(619, 191)
+start_position = Vector2(615, 309)
+end_position = Vector2(621, 187)
 
 [node name="Light3" type="NavigationLink2D" parent="." unique_id=1696592056]
 navigation_layers = 8
@@ -1144,8 +1145,9 @@ end_position = Vector2(447, 124)
 navigation_polygon = SubResource("NavigationPolygon_8jn3t")
 
 [node name="link14" type="NavigationLink2D" parent="." unique_id=393844579]
+position = Vector2(-2, 2)
 start_position = Vector2(450, 119)
-end_position = Vector2(622, 119)
+end_position = Vector2(621, 120)
 
 [node name="link17" type="NavigationLink2D" parent="." unique_id=47990989]
 start_position = Vector2(699, 46)
