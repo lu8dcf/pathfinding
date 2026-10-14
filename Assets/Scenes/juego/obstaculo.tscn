@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cnkgrjdvhkd7y"]
+
+[ext_resource type="Texture2D" uid="uid://brpcn2l0l33xt" path="res://Models/ikurosofttrans.png" id="1_2qdbm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sugfe"]
+radius = 10.366574
+
+[node name="Obstaculo" type="Area2D" unique_id=480415857]
+collision_layer = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=72042752]
+scale = Vector2(0.035126586, 0.035126586)
+texture = ExtResource("1_2qdbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1435278420]
+scale = Vector2(1.7568498, 1.899909)
+shape = SubResource("CircleShape2D_sugfe")
