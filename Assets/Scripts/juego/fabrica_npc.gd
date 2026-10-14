@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func seleccionar_tipo(tipo):
 	boton_npc = tipo
-	print (tipo)
+	
 
 func iniciar_npc():
 	GlobalSignal.boton.emit(boton_npc)

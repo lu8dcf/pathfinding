@@ -128,6 +128,20 @@ offset_right = 0.01586914
 offset_bottom = -0.9680176
 text = "Borrar Obstaculo"
 
+[node name="CheckButton" type="CheckButton" parent="Control" unique_id=1180127226]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 596.0
+offset_right = 201.0
+offset_bottom = 620.0
+
+[node name="Label" type="Label" parent="Control/CheckButton" unique_id=751866628]
+layout_mode = 0
+offset_left = -99.0
+offset_right = 3.0
+offset_bottom = 23.0
+text = "Mostrar Ruta"
+
 [connection signal="pressed" from="Control/common" to="." method="_on_common_pressed"]
 [connection signal="pressed" from="Control/fire" to="." method="_on_fire_pressed"]
 [connection signal="pressed" from="Control/cold" to="." method="_on_cold_pressed"]
@@ -139,3 +153,4 @@ text = "Borrar Obstaculo"
 [connection signal="pressed" from="Control/create_obs" to="." method="_on_create_obs_pressed"]
 [connection signal="mouse_entered" from="Control/delete_obs" to="." method="_on_delete_obs_mouse_entered"]
 [connection signal="pressed" from="Control/delete_obs" to="." method="_on_delete_obs_pressed"]
+[connection signal="pressed" from="Control/CheckButton" to="." method="_on_check_button_pressed"]

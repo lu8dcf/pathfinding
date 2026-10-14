@@ -15,6 +15,7 @@ const LAYER_POISON = 1 << 4
 const LAYER_LIGHT = 1 << 3
 
 func _ready() -> void:
+	GlobalSignal.ver_ruta.connect(ver_ruta)
 	cargar_sprite()
 	cargar_layer()
 	objetivo = get_tree().get_first_node_in_group("llegada")
@@ -33,7 +34,13 @@ func _ready() -> void:
 	agent.debug_enabled = false
 	
 	
-
+func ver_ruta():
+	if agent.debug_enabled:
+		agent.debug_enabled = false
+	else:
+		agent.debug_enabled = true
+	
+	
 func _physics_process(_delta: float) -> void:
 
 	if agent.is_navigation_finished():

@@ -97,3 +97,7 @@ func _on_delete_obs_mouse_exited() -> void:
 	if GlobalGame.delete:
 		return
 	$Control/delete_obs.modulate = Color.WHITE
+
+
+func _on_check_button_pressed() -> void:
+	GlobalSignal.ver_ruta.emit()
