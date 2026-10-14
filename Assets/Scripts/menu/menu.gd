@@ -101,3 +101,56 @@ func _on_delete_obs_mouse_exited() -> void:
 
 func _on_check_button_pressed() -> void:
 	GlobalSignal.ver_ruta.emit()
+
+func ver():
+	$costos.visible  = true
+	$costos.modulate.a = 0.0
+
+	var tween = create_tween()
+	tween.tween_property($costos, "modulate:a", 1.0, 0.5)
+	
+func no():
+	var tween = create_tween()
+	tween.tween_property($costos, "modulate:a", 0.0, 0.5)
+
+	await tween.finished
+	$costos.visible  = false
+
+func _on_common_mouse_entered() -> void:
+	ver()
+
+
+func _on_common_mouse_exited() -> void:
+	no()
+
+
+func _on_fire_mouse_entered() -> void:
+	ver()
+
+
+func _on_fire_mouse_exited() -> void:
+	no()
+
+
+func _on_cold_mouse_entered() -> void:
+	ver()
+
+
+func _on_cold_mouse_exited() -> void:
+	no()
+
+
+func _on_lightning_mouse_entered() -> void:
+	ver()
+
+
+func _on_lightning_mouse_exited() -> void:
+	no()
+
+
+func _on_poison_mouse_entered() -> void:
+	ver()
+
+
+func _on_poison_mouse_exited() -> void:
+	no()
