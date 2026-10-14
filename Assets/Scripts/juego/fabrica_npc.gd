@@ -20,7 +20,6 @@ func iniciar_npc():
 		if tipo==2 or tipo==0:
 			tipo=6
 	var npc = npc_scene.instantiate()
-	print (tipo)
 	npc.tipo=tipo
 	npc.global_position = Vector2(75,570)
 	get_tree().current_scene.add_child(npc)

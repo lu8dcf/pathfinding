@@ -110,10 +110,7 @@ func ver():
 	tween.tween_property($costos, "modulate:a", 1.0, 0.5)
 	
 func no():
-	var tween = create_tween()
-	tween.tween_property($costos, "modulate:a", 0.0, 0.5)
-
-	await tween.finished
+	
 	$costos.visible  = false
 
 func _on_common_mouse_entered() -> void:
@@ -154,3 +151,23 @@ func _on_poison_mouse_entered() -> void:
 
 func _on_poison_mouse_exited() -> void:
 	no()
+
+
+func _on_common_focus_entered() -> void:
+	ver()
+
+
+func _on_fire_focus_entered() -> void:
+	ver()
+
+
+func _on_cold_focus_entered() -> void:
+	ver()
+
+
+func _on_lightning_focus_entered() -> void:
+	ver()
+
+
+func _on_poison_focus_entered() -> void:
+	pass # Replace with function body.
