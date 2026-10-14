@@ -1242,7 +1242,77 @@ start_position = Vector2(662, 564)
 end_position = Vector2(665, 458)
 travel_cost = 7.0
 
-[node name="NavigationLink2D5" type="NavigationLink2D" parent="." unique_id=750810885]
+[node name="cp1" type="NavigationLink2D" parent="." unique_id=750810885]
+navigation_layers = 4
+start_position = Vector2(448, 122)
+end_position = Vector2(364, 118)
+travel_cost = 4.0
+
+[node name="cp2" type="NavigationLink2D" parent="." unique_id=504302256]
+navigation_layers = 4
+start_position = Vector2(574, 385)
+end_position = Vector2(410, 376)
+travel_cost = 4.0
+
+[node name="cp3" type="NavigationLink2D" parent="." unique_id=406166558]
+navigation_layers = 4
+start_position = Vector2(916, 271)
+end_position = Vector2(918, 156)
+travel_cost = 4.0
+
+[node name="cp4" type="NavigationLink2D" parent="." unique_id=895060898]
+navigation_layers = 4
+start_position = Vector2(663, 565)
+end_position = Vector2(664, 455)
+travel_cost = 4.0
+
+[node name="cl1" type="NavigationLink2D" parent="." unique_id=1160824836]
+navigation_layers = 4
+start_position = Vector2(614, 308)
+end_position = Vector2(621, 187)
+travel_cost = 7.0
+
+[node name="cl2" type="NavigationLink2D" parent="." unique_id=764810768]
+navigation_layers = 4
+start_position = Vector2(403, 457)
+end_position = Vector2(234, 451)
+travel_cost = 7.0
+
+[node name="cl3" type="NavigationLink2D" parent="." unique_id=1167158030]
+navigation_layers = 4
+start_position = Vector2(918, 427)
+end_position = Vector2(916, 271)
+travel_cost = 7.0
+
+[node name="cl4" type="NavigationLink2D" parent="." unique_id=799961952]
+navigation_layers = 4
+start_position = Vector2(789, 563)
+end_position = Vector2(784, 460)
+travel_cost = 7.0
+
+[node name="lf1" type="NavigationLink2D" parent="." unique_id=1010223061]
+navigation_layers = 8
+start_position = Vector2(448, 306)
+end_position = Vector2(440, 196)
+travel_cost = 4.0
+
+[node name="lf2" type="NavigationLink2D" parent="." unique_id=1230436040]
+navigation_layers = 8
+start_position = Vector2(574, 566)
+end_position = Vector2(576, 458)
+travel_cost = 4.0
+
+[node name="lf3" type="NavigationLink2D" parent="." unique_id=1552234495]
+navigation_layers = 8
+start_position = Vector2(1086, 497)
+end_position = Vector2(923, 492)
+travel_cost = 4.0
+
+[node name="lc1" type="NavigationLink2D" parent="." unique_id=676732503]
+navigation_layers = 8
+travel_cost = 7.0
+
+[node name="NavigationLink2D9" type="NavigationLink2D" parent="." unique_id=339400607]
 
 [connection signal="body_entered" from="llegada" to="." method="_on_llegada_body_entered"]
 [connection signal="input_event" from="zon1" to="." method="_on_zon_1_input_event"]
