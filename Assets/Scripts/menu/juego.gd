@@ -9,7 +9,7 @@ func _ready() -> void:
 	GlobalSignal.iniciar_npc.emit(1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
