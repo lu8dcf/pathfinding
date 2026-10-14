@@ -7,6 +7,7 @@ extends CharacterBody2D
 var sprite ="res://Models/6.png"
 
 var objetivo: Node2D
+var vuelta: Node2D
 
 const LAYER_GROUND = 1 << 0
 const LAYER_FIRE = 1 << 1
@@ -19,7 +20,7 @@ func _ready() -> void:
 	cargar_sprite()
 	cargar_layer()
 	objetivo = get_tree().get_first_node_in_group("llegada")
-	
+	vuelta = get_tree().get_first_node_in_group("salida")
 	# Esperar un frame de física para que la navegación esté lista
 	await get_tree().physics_frame
 	
@@ -46,7 +47,8 @@ func _physics_process(_delta: float) -> void:
 	if agent.is_navigation_finished():
 		velocity = Vector2.ZERO
 		move_and_slide()
-		queue_free()
+		#queue_free()
+		recalcular_destino()
 		return
 	
 	var siguiente_punto = agent.get_next_path_position()
@@ -62,7 +64,17 @@ func _physics_process(_delta: float) -> void:
 
 	move_and_slide()
 
+func recalcular_destino():
+	agent.target_position = objetivo.position
 
+	await get_tree().process_frame
+
+	if agent.is_target_reachable() == false:
+		volver_al_inicio()
+
+func volver_al_inicio():
+	agent.target_position = vuelta.position
+	
 func cargar_sprite():
 	$Sprite2D.texture = load ("res://Models/"+str(tipo)+".png")
 	

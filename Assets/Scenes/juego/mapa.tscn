@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bca53lfx8p0yt" path="res://Models/mapa.png" id="1_gpbuu"]
 [ext_resource type="Script" uid="uid://m74ten6ugqsm" path="res://Assets/Scripts/juego/mapa.gd" id="1_wnxg7"]
+[ext_resource type="Script" uid="uid://hw7uecvlb16v" path="res://Assets/Scripts/juego/salida.gd" id="2_egq0c"]
 [ext_resource type="Texture2D" uid="uid://doecjncigfrbg" path="res://Models/caja_1.png" id="2_p2fab"]
 [ext_resource type="Texture2D" uid="uid://bmitrtuigef5m" path="res://Models/caja_3.png" id="3_2hwwb"]
 [ext_resource type="Texture2D" uid="uid://b7yxirr21xjxr" path="res://Models/caja_5.png" id="4_2hwwb"]
@@ -303,6 +304,7 @@ z_index = 1
 position = Vector2(73, 569)
 collision_layer = 64
 collision_mask = 0
+script = ExtResource("2_egq0c")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="salida" unique_id=1727373051]
