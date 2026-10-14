@@ -195,6 +195,8 @@ vertices = PackedVector2Array(659, 489.3828, 658.52344, 485.54688, 675.7031, 487
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(649, 490, 649, 507, 685, 509, 686, 479, 647, 474)])
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3sigb"]
+
 [node name="mapa" type="StaticBody2D" unique_id=1102544586]
 collision_mask = 2
 script = ExtResource("1_wnxg7")
@@ -1144,6 +1146,10 @@ navigation_layers = 16
 start_position = Vector2(1088, 495)
 end_position = Vector2(920, 491)
 travel_cost = 7.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1377834479]
+position = Vector2(534, 210)
+shape = SubResource("CircleShape2D_3sigb")
 
 [connection signal="body_entered" from="llegada" to="." method="_on_llegada_body_entered"]
 [connection signal="input_event" from="zon1" to="." method="_on_zon_1_input_event"]
