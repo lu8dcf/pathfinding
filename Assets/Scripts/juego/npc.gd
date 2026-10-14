@@ -30,7 +30,7 @@ func _ready() -> void:
 	# movimiento suave en las esquinas
 	agent.avoidance_enabled = true
 	agent.radius = 30
-	agent.debug_enabled = true
+	agent.debug_enabled = false
 	
 	
 
@@ -39,6 +39,7 @@ func _physics_process(_delta: float) -> void:
 	if agent.is_navigation_finished():
 		velocity = Vector2.ZERO
 		move_and_slide()
+		queue_free()
 		return
 	
 	var siguiente_punto = agent.get_next_path_position()
@@ -48,6 +49,9 @@ func _physics_process(_delta: float) -> void:
 	var velocidad_objetivo = direccion * velocidad
 
 	velocity = velocity.lerp(velocidad_objetivo, 0.1)
+	
+	if velocity == Vector2.ZERO:
+		queue_free()
 
 	move_and_slide()
 

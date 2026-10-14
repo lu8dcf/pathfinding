@@ -1310,9 +1310,69 @@ travel_cost = 4.0
 
 [node name="lc1" type="NavigationLink2D" parent="." unique_id=676732503]
 navigation_layers = 8
+start_position = Vector2(788, 157)
+end_position = Vector2(784, 86)
 travel_cost = 7.0
 
-[node name="NavigationLink2D9" type="NavigationLink2D" parent="." unique_id=339400607]
+[node name="lc2" type="NavigationLink2D" parent="." unique_id=904420931]
+navigation_layers = 8
+start_position = Vector2(750, 455)
+end_position = Vector2(747, 339)
+travel_cost = 7.0
+
+[node name="lc3" type="NavigationLink2D" parent="." unique_id=53739672]
+navigation_layers = 8
+start_position = Vector2(921, 564)
+end_position = Vector2(921, 490)
+travel_cost = 7.0
+
+[node name="lc4" type="NavigationLink2D" parent="." unique_id=1510449523]
+navigation_layers = 8
+start_position = Vector2(404, 569)
+end_position = Vector2(406, 476)
+travel_cost = 7.0
+
+[node name="pc1" type="NavigationLink2D" parent="." unique_id=339400607]
+navigation_layers = 16
+start_position = Vector2(403, 569)
+end_position = Vector2(403, 476)
+travel_cost = 4.0
+
+[node name="pc2" type="NavigationLink2D" parent="." unique_id=937645344]
+navigation_layers = 16
+start_position = Vector2(917, 566)
+end_position = Vector2(921, 492)
+travel_cost = 4.0
+
+[node name="pc3" type="NavigationLink2D" parent="." unique_id=1220866444]
+navigation_layers = 16
+start_position = Vector2(752, 457)
+end_position = Vector2(746, 338)
+travel_cost = 4.0
+
+[node name="pc4" type="NavigationLink2D" parent="." unique_id=1058012033]
+navigation_layers = 16
+start_position = Vector2(788, 158)
+end_position = Vector2(785, 84)
+travel_cost = 4.0
+
+[node name="pf1" type="NavigationLink2D" parent="." unique_id=757220752]
+navigation_layers = 16
+start_position = Vector2(446, 305)
+end_position = Vector2(441, 197)
+travel_cost = 7.0
+
+[node name="pf2" type="NavigationLink2D" parent="." unique_id=2133515353]
+navigation_layers = 16
+start_position = Vector2(580, 569)
+end_position = Vector2(576, 461)
+travel_cost = 7.0
+
+[node name="pf3" type="NavigationLink2D" parent="." unique_id=807582064]
+navigation_layers = 16
+start_position = Vector2(1088, 495)
+end_position = Vector2(920, 491)
+travel_cost = 7.0
 
 [connection signal="body_entered" from="llegada" to="." method="_on_llegada_body_entered"]
 [connection signal="input_event" from="zon1" to="." method="_on_zon_1_input_event"]

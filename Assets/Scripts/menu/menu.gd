@@ -3,35 +3,57 @@ extends CanvasLayer
 
 var cursor = preload("res://Models/ikurosofttrans.png")
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	GlobalSignal.boton.connect(indicar)
+	
+func limpia_botones():
+	$Control/common.modulate = Color.WHITE
+	$Control/fire.modulate = Color.WHITE
+	$Control/cold.modulate = Color.WHITE	
+	$Control/lightning.modulate = Color.WHITE
+	$Control/poison.modulate = Color.WHITE
+	$Control/random.modulate = Color.WHITE
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
-
+func indicar(tipo):
+	match tipo:
+		6:
+			$Control/common.modulate = Color.RED
+		1:
+			$Control/fire.modulate = Color.RED
+		3:
+			$Control/cold.modulate = Color.RED
+		5:
+			$Control/lightning.modulate = Color.RED
+		4:
+			$Control/poison.modulate = Color.RED
+		0:
+			$Control/random.modulate = Color.RED
+	
+	await get_tree().create_timer(1.5).timeout
+	limpia_botones()
+	
+	
 func _on_common_pressed() -> void:
 	GlobalSignal.iniciar_npc.emit(6)
-
+	
 func _on_fire_pressed() -> void:
 	GlobalSignal.iniciar_npc.emit(1)
 	
+	
 func _on_cold_pressed() -> void:
 	GlobalSignal.iniciar_npc.emit(3)
-
+		
 func _on_lightning_pressed() -> void:
 	GlobalSignal.iniciar_npc.emit(5)
-
+		
 func _on_poison_pressed() -> void:
 	GlobalSignal.iniciar_npc.emit(4)
-
+	
+	
 func _on_random_pressed() -> void:
+	limpia_botones()
 	GlobalSignal.iniciar_npc.emit(0)
-
+	$Control/random.modulate = Color.RED
 
 func _on_create_obs_pressed() -> void:
 	if GlobalGame.create:
