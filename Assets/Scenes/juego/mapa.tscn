@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://by83kaupt3js5" path="res://Models/caja_6.png" id="6_wyybc"]
 [ext_resource type="Script" uid="uid://cyg6cxssry3v4" path="res://Assets/Scripts/juego/llegada.gd" id="7_5rdxw"]
 [ext_resource type="Texture2D" uid="uid://2gjlt7bif001" path="res://Models/caja_2.png" id="7_6mnon"]
+[ext_resource type="Texture2D" uid="uid://ky22kj05ov74" path="res://Models/chico.png" id="10_wnxg7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8xuu"]
 size = Vector2(48, 16)
@@ -140,6 +141,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(56, 559, 55, 582, 453, 
 vertices = PackedVector2Array(601.3125, 573.1406, 550.6406, 573.8594, 550.34375, 565.5625, 600.65625, 563.39844)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(540, 556, 541, 584, 612, 583, 610, 553)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcqpi"]
+size = Vector2(79.27185, 1.8849258)
 
 [node name="mapa" type="StaticBody2D" unique_id=1102544586]
 collision_mask = 2
@@ -693,4 +697,19 @@ end_position = Vector2(439, 570)
 start_position = Vector2(639, 570)
 end_position = Vector2(592, 567)
 
+[node name="zon1" type="Area2D" parent="." unique_id=992686924]
+z_index = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zon1" unique_id=1676872372]
+position = Vector2(492.99997, 569)
+rotation = -3.1415925
+scale = Vector2(1.5390081, -15.896342)
+shape = SubResource("RectangleShape2D_qcqpi")
+
+[node name="Sprite2D" type="Sprite2D" parent="zon1" unique_id=1328116278]
+visible = false
+position = Vector2(493, 571)
+texture = ExtResource("10_wnxg7")
+
 [connection signal="body_entered" from="llegada" to="." method="_on_llegada_body_entered"]
+[connection signal="input_event" from="zon1" to="." method="_on_zon_1_input_event"]
